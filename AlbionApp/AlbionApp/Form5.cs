@@ -21,16 +21,25 @@ namespace AlbionApp
         private void button1_Click(object sender, EventArgs e)
         {
             int a = 0;
+            int x, y, z;
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "")
+            {
+                MessageBox.Show("Неверные значения");
+                return;
+            }
+            int.TryParse(textBox2.Text, out x);
+            int.TryParse(textBox3.Text, out y);
+            int.TryParse(textBox4.Text, out z);
             ControlID.TextData = textBox1.Text;
-            ControlID.IntData1 = int.Parse(textBox2.Text);
-            ControlID.IntData2 = int.Parse(textBox3.Text);
-            ControlID.IntData3 = int.Parse(textBox4.Text);
+            ControlID.IntData1 = x;
+            ControlID.IntData2 = y;
+            ControlID.IntData3 = z;
             for (int i = 0; i < dataGridView2.Rows.Count; i++)
             {
                 ControlID.IntData4 = ControlID.IntData4 + temp[a].parcost * temp[a].parammount;
                 a++;
             }
-            Close();
+            DialogResult = DialogResult.OK;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -56,6 +65,7 @@ namespace AlbionApp
             dataGridView2.Columns[0].HeaderText = "Name";
             dataGridView2.Columns[1].HeaderText = "Tier";
             dataGridView2.Columns[2].HeaderText = "Ammount";
+            dataGridView1.ClearSelection();
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)

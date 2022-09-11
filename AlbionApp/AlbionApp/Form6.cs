@@ -19,8 +19,14 @@ namespace AlbionApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ControlID.IntData6 = Convert.ToInt32(textBox1.Text);
-            Close();
+            int a;
+            int.TryParse(textBox1.Text, out a);
+            if(textBox1.Text == "")
+            {
+                return;
+            }
+            ControlID.IntData6 = a;
+            DialogResult = DialogResult.OK;
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)

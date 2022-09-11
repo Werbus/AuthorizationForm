@@ -25,10 +25,12 @@ namespace AlbionApp
             MyDataBase.CreateTable("CREATE TABLE IF NOT EXISTS [Items]([ID] INTEGER PRIMARY KEY NOT NULL, [Name] STRING, [Tier] INT, [Cost] INT);");
             MyDataBase.CreateTable("CREATE TABLE IF NOT EXISTS [AllItems]([ID] INTEGER PRIMARY KEY NOT NULL, [Name] STRING, [Tier] INT, [Cost] INT);");
             MyDataBase.CreateTable("CREATE TABLE IF NOT EXISTS [Crafts]([ID] INTEGER PRIMARY KEY NOT NULL, [Name] STRING, [Tier] INT, [Cost] INT, [CraftCost] INT, [Recipe] STRING);");
+            MyDataBase.CreateTable("CREATE TABLE IF NOT EXISTS [History]([ID] INTEGER PRIMARY KEY NOT NULL, [Name] STRING, [Ammount] INT, [Profit] INT, [Subsidence] INT, [Net_profit] INT);");
 
             MyDataBase.AddItemTable(GetTable.data, "Items");
             dataGridView1.DataSource = GetTable.data;
             ControlID.GetTableName = "Items";
+            dataGridView1.ClearSelection();
         }
 
         private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -39,25 +41,27 @@ namespace AlbionApp
         private void предметToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             addItemForm toAdd = new addItemForm();
-           if(toAdd.ShowDialog() == DialogResult.OK)
+            if(toAdd.ShowDialog() == DialogResult.OK)
             {
                 string getname = ControlID.TextData;
                 int gettier = ControlID.IntData1;
                 int getcost = ControlID.IntData2;
-                MyDataBase.AddItem(getname, gettier, getcost);
+                MyDataBase.AddItem(getname, gettier, getcost);               
                 if(ControlID.GetTableName == "Items")
                 {
                     MyDataBase.AddItemTable(GetTable.data, "Items");
                     dataGridView1.DataSource = GetTable.data;
                     ControlID.GetTableName = "Items";
+                    dataGridView1.ClearSelection();
                 }
-            }
+            }            
         }
         private void таблицаПредметовToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ControlID.GetTableName = "Items";
             MyDataBase.AddItemTable(GetTable.data, "Items");
-            dataGridView1.DataSource = GetTable.data;           
+            dataGridView1.DataSource = GetTable.data;
+            dataGridView1.ClearSelection();
         }
 
         private void таблицаКрафтовToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,6 +69,7 @@ namespace AlbionApp
             ControlID.GetTableName = "Crafts";
             MyDataBase.AddCraftTable(GetTable.data, "Crafts");
             dataGridView1.DataSource = GetTable.data;
+            dataGridView1.ClearSelection();
         }
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -110,13 +115,17 @@ namespace AlbionApp
         {
             if (ControlID.GetTableName == "Items")
             {
-                MyDataBase.DeleteItemCommand(GetTable.data, ControlID.TextData, ControlID.IntData1);
+                string getname = ControlID.TextData;
+                int gettier = ControlID.IntData1;
+                MyDataBase.DeleteItemCommand(getname, gettier);
                 MyDataBase.AddItemTable(GetTable.data, "Items");
                 dataGridView1.DataSource = GetTable.data;
             }
             if (ControlID.GetTableName == "Crafts")
             {
-                MyDataBase.DeleteCraftCommand(GetTable.data, ControlID.TextData, ControlID.IntData1);
+                string getname = ControlID.TextData;
+                int gettier = ControlID.IntData1;
+                MyDataBase.DeleteCraftCommand(getname, gettier);
                 MyDataBase.AddItemTable(GetTable.data, "Crafts");
                 dataGridView1.DataSource = GetTable.data;
             }
@@ -138,6 +147,7 @@ namespace AlbionApp
                     MyDataBase.AddItemTable(GetTable.data, "Items");
                     dataGridView1.DataSource = GetTable.data;
                     ControlID.GetTableName = "Items";
+                    dataGridView1.ClearSelection();
                 }
             }
             if(ControlID.GetTableName == "Crafts")
@@ -156,6 +166,7 @@ namespace AlbionApp
                     MyDataBase.AddCraftTable(GetTable.data, "Crafts");
                     dataGridView1.DataSource = GetTable.data;
                     ControlID.GetTableName = "Crafts";
+                    dataGridView1.ClearSelection();
                 }
             }
         }
@@ -176,6 +187,7 @@ namespace AlbionApp
                     MyDataBase.AddCraftTable(GetTable.data, "Crafts");
                     dataGridView1.DataSource = GetTable.data;
                     ControlID.GetTableName = "Crafts";
+                    dataGridView1.ClearSelection();
                 }
             }
         }
@@ -184,6 +196,12 @@ namespace AlbionApp
         {
             Form7 sum = new Form7();
             sum.ShowDialog();
+        }
+
+        private void историяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form8 history = new Form8();
+            history.ShowDialog();
         }
     }
 }

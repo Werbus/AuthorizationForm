@@ -27,6 +27,7 @@ namespace AlbionApp
             MyDataBase.Connect("mydatabaseforalbion.db");
             MyDataBase.GetSum(GetTable.data);
             dataGridView1.DataSource = GetTable.data;
+            dataGridView1.ClearSelection();
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -53,13 +54,35 @@ namespace AlbionApp
             Form6 getammount = new Form6();
            if(getammount.ShowDialog() == DialogResult.OK)
             {
-                label4.Text = ControlID.TextData + " T" + Convert.ToString(ControlID.IntData1);
-                label7.Text = Convert.ToString(ControlID.IntData6);
                 int getsum = ControlID.IntData6 * ControlID.IntData2;
-                label5.Text = Convert.ToString(getsum);
-                getsum = ControlID.IntData6 * ControlID.IntData4 + ControlID.IntData6 * ControlID.IntData3;
-                label6.Text = Convert.ToString(getsum);
+                int getsum1 = ControlID.IntData6 * ControlID.IntData4 + ControlID.IntData6 * ControlID.IntData3;
+                label4.Text = ControlID.TextData + " T" + Convert.ToString(ControlID.IntData1);
+                label7.Text = Convert.ToString(ControlID.IntData6);               
+                label5.Text = Convert.ToString(getsum);               
+                label6.Text = Convert.ToString(getsum1);
+                label10.Text = Convert.ToString(getsum - getsum1);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(label4.Text == "" || label7.Text == "" || label5.Text == "" || label6.Text == "" || label10.Text == "")
+            {
+                MessageBox.Show("Объект не выбран");
+                return;
+            }
+            string name = label4.Text;
+            int ammount = int.Parse(label7.Text);
+            int profit = int.Parse(label5.Text);
+            int subsidence = int.Parse(label6.Text);
+            int net_profit = int.Parse(label10.Text);
+            MyDataBase.AddHistory(name, ammount, profit, subsidence, net_profit);
+            MessageBox.Show("Запись сохранена");
+            label4.Text = "";
+            label7.Text = "";
+            label5.Text = "";
+            label6.Text = "";
+            label10.Text = "";
         }
     }
 }

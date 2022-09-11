@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.создатьЭлементToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.предметToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,12 +38,13 @@
             this.крафтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.предметToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.крафтToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.историяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.счётToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.закрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.изменитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.счётToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -64,6 +66,7 @@
             this.создатьЭлементToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.предметToolStripMenuItem,
             this.крафтToolStripMenuItem,
+            this.историяToolStripMenuItem,
             this.счётToolStripMenuItem,
             this.закрытьToolStripMenuItem});
             this.создатьЭлементToolStripMenuItem.Name = "создатьЭлементToolStripMenuItem";
@@ -76,7 +79,7 @@
             this.таблицаПредметовToolStripMenuItem,
             this.таблицаКрафтовToolStripMenuItem});
             this.предметToolStripMenuItem.Name = "предметToolStripMenuItem";
-            this.предметToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.предметToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.предметToolStripMenuItem.Text = "Открыть";
             // 
             // таблицаПредметовToolStripMenuItem
@@ -99,7 +102,7 @@
             this.предметToolStripMenuItem1,
             this.крафтToolStripMenuItem1});
             this.крафтToolStripMenuItem.Name = "крафтToolStripMenuItem";
-            this.крафтToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.крафтToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.крафтToolStripMenuItem.Text = "Добавить";
             // 
             // предметToolStripMenuItem1
@@ -116,10 +119,24 @@
             this.крафтToolStripMenuItem1.Text = "Крафт";
             this.крафтToolStripMenuItem1.Click += new System.EventHandler(this.крафтToolStripMenuItem1_Click);
             // 
+            // историяToolStripMenuItem
+            // 
+            this.историяToolStripMenuItem.Name = "историяToolStripMenuItem";
+            this.историяToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.историяToolStripMenuItem.Text = "История";
+            this.историяToolStripMenuItem.Click += new System.EventHandler(this.историяToolStripMenuItem_Click);
+            // 
+            // счётToolStripMenuItem
+            // 
+            this.счётToolStripMenuItem.Name = "счётToolStripMenuItem";
+            this.счётToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.счётToolStripMenuItem.Text = "Счёт";
+            this.счётToolStripMenuItem.Click += new System.EventHandler(this.счётToolStripMenuItem_Click);
+            // 
             // закрытьToolStripMenuItem
             // 
             this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
-            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.закрытьToolStripMenuItem.Text = "Закрыть";
             this.закрытьToolStripMenuItem.Click += new System.EventHandler(this.закрытьToolStripMenuItem_Click);
             // 
@@ -130,7 +147,6 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
@@ -162,13 +178,6 @@
             this.изменитьToolStripMenuItem.Text = "Изменить";
             this.изменитьToolStripMenuItem.Click += new System.EventHandler(this.изменитьToolStripMenuItem_Click);
             // 
-            // счётToolStripMenuItem
-            // 
-            this.счётToolStripMenuItem.Name = "счётToolStripMenuItem";
-            this.счётToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.счётToolStripMenuItem.Text = "Счёт";
-            this.счётToolStripMenuItem.Click += new System.EventHandler(this.счётToolStripMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,9 +186,10 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "For Cen9I";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -207,6 +217,7 @@
         private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem изменитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem счётToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem историяToolStripMenuItem;
     }
 }
 

@@ -103,7 +103,7 @@ namespace AlbionApp
             adapter.Fill(data);
             GetTable.data = data;
         }
-        static public void DeleteItemCommand(DataTable data, string getname, int gettier)
+        static public void DeleteItemCommand(string getname, int gettier)
         {
             command = new SQLiteCommand(connection)
             {
@@ -120,7 +120,7 @@ namespace AlbionApp
             command.Parameters.AddWithValue("gettier", gettier);
             command.ExecuteNonQuery();
         }
-        static public void DeleteCraftCommand(DataTable data, string getname, int gettier)
+        static public void DeleteCraftCommand(string getname, int gettier)
         {
             command = new SQLiteCommand(connection)
             {
@@ -192,6 +192,40 @@ namespace AlbionApp
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
             adapter.Fill(data);
             GetTable.data = data;
+        }
+        static public void AddHistory(string name, int ammount, int profit, int subsidence, int net_profit)
+        {
+            command = new SQLiteCommand(connection)
+            {
+                CommandText = "INSERT INTO History (Name, Ammount, Profit, Subsidence, Net_profit) VALUES (:name, :ammount, :profit, :subsidence, :net_profit)"
+            };
+            command.Parameters.AddWithValue("name", name);
+            command.Parameters.AddWithValue("ammount", ammount);
+            command.Parameters.AddWithValue("profit", profit);
+            command.Parameters.AddWithValue("subsidence", subsidence);
+            command.Parameters.AddWithValue("net_profit", net_profit);
+            command.ExecuteNonQuery();
+        }
+        static public void AddHistoryTable(DataTable data, string table)
+        {
+            command.CommandText = "SELECT Name, Ammount, Profit, Subsidence, Net_profit FROM " + table;
+            data = new DataTable();
+            SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
+            adapter.Fill(data);
+            GetTable.data = data;
+        }
+        static public void DeleteHistory(string name, int ammount, int profit, int subsidence, int net_profit)
+        {
+            command = new SQLiteCommand(connection)
+            {
+                CommandText = "DELETE FROM History WHERE (Name = :name) AND (Ammount = :ammount) AND (Profit = :profit) AND (Subsidence = :subsidence) AND (Net_profit = :net_profit)"
+            };
+            command.Parameters.AddWithValue("name", name);
+            command.Parameters.AddWithValue("ammount", ammount);
+            command.Parameters.AddWithValue("profit", profit);
+            command.Parameters.AddWithValue("subsidence", subsidence);
+            command.Parameters.AddWithValue("net_profit", net_profit);
+            command.ExecuteNonQuery();
         }
     }
 }

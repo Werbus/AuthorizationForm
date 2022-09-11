@@ -20,10 +20,18 @@ namespace AlbionApp
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "")
+            {
+                MessageBox.Show("Неверные значения");
+                return;
+            }
+            int a, b;
+            int.TryParse(textBox2.Text, out a);
+            int.TryParse(textBox3.Text, out b);
             ControlID.TextData = textBox1.Text;
-            ControlID.IntData1 = int.Parse(textBox2.Text);
-            ControlID.IntData2 = int.Parse(textBox3.Text);
-            Close();
+            ControlID.IntData1 = a;
+            ControlID.IntData2 = b;
+            DialogResult = DialogResult.OK;
         }
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
