@@ -1,2 +1,2 @@
 # AuthorizationForm
-Import 'mydb.sql' to the DBMS
+Import 'mydb.sql' to the phpMyAdmin
