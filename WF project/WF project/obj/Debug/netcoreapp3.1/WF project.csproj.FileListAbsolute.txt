@@ -1,0 +1,29 @@
+C:\Users\user\source\repos\WF project\WF project\obj\Debug\netcoreapp3.1\WF project.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\WF project\WF project\obj\Debug\netcoreapp3.1\WF_project.MainForm.resources
+C:\Users\user\source\repos\WF project\WF project\obj\Debug\netcoreapp3.1\WF project.csproj.GenerateResource.cache
+C:\Users\user\source\repos\WF project\WF project\obj\Debug\netcoreapp3.1\WF project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\WF project\WF project\obj\Debug\netcoreapp3.1\WF project.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\WF project\WF project\obj\Debug\netcoreapp3.1\WF project.AssemblyInfo.cs
+C:\Users\user\source\repos\WF project\WF project\obj\Debug\netcoreapp3.1\WF project.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\WF project\WF project\bin\Debug\netcoreapp3.1\WF project.exe
+C:\Users\user\source\repos\WF project\WF project\bin\Debug\netcoreapp3.1\WF project.deps.json
+C:\Users\user\source\repos\WF project\WF project\bin\Debug\netcoreapp3.1\WF project.runtimeconfig.json
+C:\Users\user\source\repos\WF project\WF project\bin\Debug\netcoreapp3.1\WF project.runtimeconfig.dev.json
+C:\Users\user\source\repos\WF project\WF project\bin\Debug\netcoreapp3.1\WF project.dll
+C:\Users\user\source\repos\WF project\WF project\bin\Debug\netcoreapp3.1\WF project.pdb
+C:\Users\user\source\repos\WF project\WF project\bin\Debug\netcoreapp3.1\MySql.Data.dll
+C:\Users\user\source\repos\WF project\WF project\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
+C:\Users\user\source\repos\WF project\WF project\bin\Debug\netcoreapp3.1\ZstdNet.dll
+C:\Users\user\source\repos\WF project\WF project\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.Streams.dll
+C:\Users\user\source\repos\WF project\WF project\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\user\source\repos\WF project\WF project\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.dll
+C:\Users\user\source\repos\WF project\WF project\bin\Debug\netcoreapp3.1\K4os.Hash.xxHash.dll
+C:\Users\user\source\repos\WF project\WF project\obj\Debug\netcoreapp3.1\WF project.csproj.CopyComplete
+C:\Users\user\source\repos\WF project\WF project\obj\Debug\netcoreapp3.1\WF project.dll
+C:\Users\user\source\repos\WF project\WF project\obj\Debug\netcoreapp3.1\WF project.pdb
+C:\Users\user\source\repos\WF project\WF project\obj\Debug\netcoreapp3.1\WF project.genruntimeconfig.cache
+C:\Users\user\source\repos\WF project\WF project\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\user\source\repos\WF project\WF project\obj\Debug\netcoreapp3.1\WF_project.Authorize.resources
+C:\Users\user\source\repos\WF project\WF project\obj\Debug\netcoreapp3.1\WF_project.Authorize - Копировать.resources
+C:\Users\user\source\repos\WF project\WF project\obj\Debug\netcoreapp3.1\WF_project.Register.resources
+C:\Users\user\source\repos\WF project\WF project\obj\Debug\netcoreapp3.1\WF_project.UserList.resources
